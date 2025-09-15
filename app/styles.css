@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #aeaeae;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 20px 0;
+    color: #6055ffc0;
+    font-size: 2rem;
+}
+
+#communicationSection {
+    display: flex;
+    width: 90%;
+    height: 85vh;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#callBox {
+    flex: 3; /* 75% width */
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-right: 2px solid #333;
+}
+
+#videoGrid {
+    display: grid;
+    gap: 15px;
+    width: 100%;
+    height: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: minmax(150px, auto);
+    justify-content: center;
+}
+
+#videoGrid video {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border: 3px solid #444;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#videoGrid video.speaking {
+    border-color: #6055ffc0;
+    box-shadow: 0 0 15px 5px #6055ffc0;
+    transform: scale(1.02);
+}
+
+#controls {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#controls button {
+    gap: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    background-color: #6055ffc0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#controls button:hover {
+    background-color: #4437ffc0;
+    transform: scale(1.05);
+}
+
+#controls button:active {
+    transform: scale(0.95);
+}
+
+#chatBox {
+    flex: 1; /* 25% width */
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c1c;
+    padding: 15px;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #aeaeae;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+#messages .message {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    background-color: #333;
+    color: #f0f0f0;
+    max-width: 80%;
+    word-wrap: break-word;
+    transition: transform 0.2s;
+}
+
+#messages .message:hover {
+    transform: scale(1.02);
+}
+
+#messages .self {
+    background-color: #6055ffc0;
+    color: #fff;
+    align-self: flex-end;
+}
+
+#chatBoxText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid #444;
+    background-color: #1e1e1e;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#chatInput:focus {
+    border-color: #6055ffc0;
+}
+
+#sendMessage {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    background-color: #6055ffc0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#sendMessage:hover {
+    background-color: #4437ffc0;
+    transform: scale(1.05);
+}
+
+#sendMessage:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #communicationSection {
+        flex-direction: column;
+        height: 90vh;
+    }
+
+    #callBox {
+        flex: none;
+        height: 60%;
+    }
+
+    #chatBox {
+        flex: none;
+        height: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    #videoGrid {
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    #controls button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    #chatInput {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #sendMessage {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
