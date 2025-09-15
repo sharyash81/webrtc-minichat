@@ -1,4 +1,4 @@
-# minichat-webrtc
+# webrtc-minichat
 
 A **WebRTC**-based real-time chat and calling demo. Browsers establish peer-to-peer audio/video streams using **STUN** for public endpoint discovery and automatically fall back to a **TURN** relay when strict NAT/firewalls block direct connectivity (handled by the browser’s ICE agent, not app logic). A lightweight **signaling server** (Socket.IO) exchanges **SDP** offers/answers and ICE candidates to bootstrap connections. This enables low-latency media and simple text chat directly in the browser with no plugins.
 
